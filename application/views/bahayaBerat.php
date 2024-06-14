@@ -20,7 +20,8 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Tanda Bahaya Kehamilan</h1>
-<p class="mb-4">Halaman ini menampilkan tanda tanda Bahaya Kehamilan yang harus ibu hamil waspadai<a target="_blank"></a></p>
+<p class="mb-4">Tanda bahaya kehamilan yang berat adalah gejala atau kondisi yang memerlukan perhatian medis <br>
+  segera karena dapat membahayakan kesehatan ibu dan janin<a target="_blank"></a></p>
 
 <div style = "position: relative; left: 1000px;">
 <div style = "position: relative; top: -70px;">
@@ -61,13 +62,13 @@ foreach($bahayaBerat as $BH) : ?>
                                                                                                            
                                         <div class="form-group">                                                  
                                         <input type="hidden" value="<?php echo $BH->id ?>" name="id"></input>                
-                                        <input type="text" value="<?php echo $BH->judul ?>" name= "judul" class="form-control1" id="focusedinput" placeholder="username">
+                                        <input type="text" value="<?php echo $BH->judul ?>"  name= "judul" class="form-control" id="focusedinput" placeholder="username">
                                         </div>
                                        
                                                                   
-                                        <div class="form-group">                                                                       
-                                        <input type="text" value="<?php echo $BH->keterangan?>" name= "keterangan" class="form-control1" id="focusedinput">
-                                        </div>
+                                        <div class="column"  >                                                                       
+                                        <textarea type="text" value="<?php echo $BH->keterangan?>"  name= "keterangan" class="form-control" id="focusedinput" required></textarea>
+                                        </div> 
                                         
 
 

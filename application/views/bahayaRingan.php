@@ -20,7 +20,9 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Tanda Bahaya Kehamilan</h1>
-<p class="mb-4">Halaman ini menampilkan tanda tanda Bahaya Kehamilan yang Ringan<a target="_blank"></a></p>
+<p class="mb-4">ibu hamil penting untuk mengetahui tanda-tanda yang mungkin menunjukkan adanya masalah selama kehamilan.<br>
+  Meskipun beberapa gejala dapat dianggap ringan, tetap perlu untuk memantau dan berkonsultasi dengan tenaga medis <br>
+  untuk memastikan kesehatan ibu dan janin <a target="_blank"></a></p>
 
 <div style = "position: relative; left: 1000px;">
 <div style = "position: relative; top: -70px;">
@@ -61,12 +63,12 @@ foreach($bahayaRingan as $BR) : ?>
                                                                                                            
                                         <div class="form-group">                                                  
                                         <input type="hidden" value="<?php echo $BR->id ?>" name="id"></input>                
-                                        <input type="text" value="<?php echo $BR->judul ?>" name= "judul" class="form-control1" id="focusedinput" placeholder="username">
+                                        <input type="text" value="<?php echo $BR->judul ?>" name= "judul" class="form-control" id="focusedinput" >
                                         </div>
                                        
                                                                   
                                         <div class="form-group">                                                                       
-                                        <input type="text" value="<?php echo $BR->keterangan?>" name= "keterangan" class="form-control1" id="focusedinput">
+                                        <input type="text" value="<?php echo $BR->keterangan?>" name= "keterangan"  class="form-control" id="focusedinput">
                                         </div>
                                         
 

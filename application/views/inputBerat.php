@@ -20,7 +20,7 @@
 
 									<div class="form-group" style = "position: relative; top: 30px;">
 									<label for="disabledinput" class="col-sm-2 control-label">Keterangan</label>
-									<textarea type="text" name="keterangan" class="col-sm-9 control-form" id="focusedinput" placeholder="" required></textarea>
+									<textarea type="text" name="keterangan" rows="5" class="col-sm-9 control-form" id="focusedinput" placeholder="" required></textarea>
 									</div>	
                                     
 
