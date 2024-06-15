@@ -3,8 +3,12 @@ class RiwayatPeriksa extends CI_Controller
 {
    function __construct()
    {
-       parent::__construct();
-       $this->load->model('riwayat_model');           
+      parent::__construct();
+    $this->load->model('riwayat_model');         
+    if(empty($this->session->userdata('username'))) {
+      redirect('Login');
+          
+    }  
         
    }
 
@@ -12,7 +16,7 @@ class RiwayatPeriksa extends CI_Controller
    {
       $data['title'] = 'Riwayat Periksa';
       $data['riwayatPeriksa'] = $this->riwayat_model->get_data('tbl_riwayat')->result();
-
+\
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);

@@ -6,13 +6,17 @@ class BahayaRingan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('bahayaRingan_model'); 
+        if(empty($this->session->userdata('username'))) {
+          redirect('Login');
+              
+        }
        
           }
    function index()
    {
     $data['title'] = 'Bahaya Ringan';
       $data['bahayaRingan'] = $this->bahayaRingan_model->get_data('tbl_ringan')->result();
-   
+  
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);

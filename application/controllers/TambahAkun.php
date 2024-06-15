@@ -4,7 +4,12 @@ class TambahAkun extends CI_Controller
    function __construct()
    {
        parent::__construct();
-       $this->load->model('tambahAkun_model');           
+     
+       $this->load->model('tambahAkun_model');    
+       if(empty($this->session->userdata('username'))) {
+         redirect('Login');
+             
+       }       
         
    }
 

@@ -4,7 +4,11 @@ class JadwalPeriksa extends CI_Controller
    function __construct()
    {
        parent::__construct();
-       $this->load->model('jadwal_model');           
+      $this->load->model('jadwal_model');  
+      if(empty($this->session->userdata('username'))) {
+         redirect('Login');
+             
+       }         
         
    }
 
@@ -12,7 +16,8 @@ class JadwalPeriksa extends CI_Controller
    {
       $data['title'] = 'Jadwal Periksa';
       $data['jadwalPeriksa'] = $this->jadwal_model->get_data('tbl_jadwal')->result();
-   
+
+     
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
