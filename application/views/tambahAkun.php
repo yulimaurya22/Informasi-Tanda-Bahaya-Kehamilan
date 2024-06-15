@@ -22,12 +22,20 @@
 <h1 class="h3 mb-2 text-gray-800">Tambah Akun Baru</h1>
 <p class="mb-4">Akun untuk ibu hamil yang belum memiliki akun <a target="_blank"></a></p>
 
-<div style = "position: relative; left: 1000px;">
-<div style = "position: relative; top: -70px;">
-<a href=<?= base_url('TambahAkun/tambah') ?> > <input class="btn"   style="background-color:	#B0E0E6;"  type=button value="+ Tambah Akun"></a>
-</div> 
+<div style = "position: relative; top: 20px;">
+
+<a href=<?= base_url('TambahAkun/tambah') ?> ><input class="btn"   style="background-color:	#B0E0E6;"  type=button value="+ Tambah Data"></a>
+
 </div> 
 
+<div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style = "position: relative; top: -20px;">
+<div style = "position: relative; left: 900px;">
+<?php echo form_open('TambahAkun/search')?>
+<input type="text" name="keyword" class="form-control" placeholder="search">
+<button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+<?php echo form_close()?>
+</div>
+</div>
     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Akun Bumil</h6>

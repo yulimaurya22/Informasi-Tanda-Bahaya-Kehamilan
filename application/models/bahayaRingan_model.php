@@ -25,5 +25,13 @@ class bahayaRingan_model extends CI_Model {
     $this->db->where('id',$id);
     $this->db->delete('tbl_ringan');
   }
+
+  public function get_keyword($keyword){
+    $this->db->select('*');
+    $this->db->from('tbl_ringan');
+    $this->db->like('judul',$keyword);
+    $this->db->or_like('keterangan',$keyword);
+    return $this->db->get()->result();
+  }
 }
 ?>

@@ -16,8 +16,6 @@ class BahayaBerat extends CI_Controller
    {
     $data['title'] = 'Bahaya Berat';
       $data['bahayaBerat'] = $this->bahayaBerat_model->get_data('tbl_berat')->result();
-
-    
    
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
@@ -49,4 +47,15 @@ class BahayaBerat extends CI_Controller
    public function deleteData()   {   
       $this->bahayaBerat_model->del_data();
       redirect('BahayaBerat'); }
-   }
+   
+
+   public function search()   {   
+  $keyword = $this->input->post('keyword');
+  $data['bahayaBerat']=$this->bahayaBerat_model->get_keyword($keyword);
+  $this->load->view('template/header');
+  $this->load->view('template/sidebar');
+  $this->load->view('template/topbar');
+  $this->load->view('bahayaBerat', $data);
+  $this->load->view('template/footer');} 
+  
+ }

@@ -47,6 +47,16 @@ class TambahAkun extends CI_Controller
       $this->tambahAkun_model->del_data();
       redirect('TambahAkun');       
                }
+
+   public function search()   {   
+  $keyword = $this->input->post('keyword');
+  $data['tambahAkun']=$this->tambahAkun_model->get_keyword($keyword);
+  $this->load->view('template/header');
+  $this->load->view('template/sidebar');
+  $this->load->view('template/topbar');
+  $this->load->view('tambahAkun', $data);
+  $this->load->view('template/footer');} 
+  
      
   
    }

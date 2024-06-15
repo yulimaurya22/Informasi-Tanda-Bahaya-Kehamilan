@@ -25,5 +25,13 @@ class tambahAkun_model extends CI_Model {
   $this->db->delete('tbl_akun');
 }
 
+public function get_keyword($keyword){
+  $this->db->select('*');
+  $this->db->from('tbl_akun');
+  $this->db->like('username',$keyword);
+  $this->db->or_like('password',$keyword);
+  return $this->db->get()->result();
+}
+
 }
 ?>
