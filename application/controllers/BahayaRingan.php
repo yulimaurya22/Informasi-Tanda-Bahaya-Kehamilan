@@ -56,5 +56,19 @@ class BahayaRingan extends CI_Controller
         $this->load->view('template/topbar');
         $this->load->view('bahayaRingan', $data);
         $this->load->view('template/footer');} 
+
+      public function selengkapnya($id)
+    {
+     $data['title'] = 'Detail';
+     $this->load->model('bahayaRingan_model');
+     $selengkapnya= $this->bahayaRingan_model->detail($id);
+     $data['selengkapnya'] = $selengkapnya;
+    
+     $this->load->view('template/header');
+     $this->load->view('template/sidebar');
+     $this->load->view('template/topbar');
+     $this->load->view('selengkapnya', $data);
+     $this->load->view('template/footer');
+    } 
         
    }

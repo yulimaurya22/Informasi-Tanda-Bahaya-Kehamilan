@@ -43,7 +43,7 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Username</th>
@@ -66,7 +66,8 @@
                                             <td><?=$no++?></td>
                                             <td><?=$TA->username ?></td>
                                             <td><?=$TA->password ?></td>
-                                            <th>                                
+                                            <th>
+                                                                         
                 <a class="btn btn-warning" data-toggle="modal"  style="background-color:	#FF8C00;" data-target="#modal-EditData<?php echo $TA->id?>">Edit</a>
                 <div class="modal fade" id="modal-EditData<?php echo $TA->id?>">
                                 <div class="modal-dialog">
@@ -99,6 +100,70 @@
                                                 <div class="col-sm-2">
                                                 </div>
                                               </div>
+
+                                              <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Nama Bunda</h5></label>                                   
+                                        <div class="col-sm-8">                       
+                                        <input type="text" value="<?php echo $TA->namabunda ?>" name= "namabunda" class="form-control1" id="focusedinput" >
+                                        </div>
+                                        </div>
+                                                                  
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>UsiaKehamilan</h5></label>
+                                        <div class="col-sm-8">                                    
+                                        <input type="text" value="<?php echo $TA->usiakehamilan?>" name= "usiakehamilan" class="form-control1" id="focusedinput">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Berat Badan Bunda</h5></label>
+                                        <div class="col-sm-8">                                    
+                                        <input type="text" value="<?php echo $TA->beratbadanbunda?>" name= "beratbadanbunda" class="form-control1" id="focusedinput">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Tinggi Badan Bunda</h5></label>
+                                        <div class="col-sm-8">                                    
+                                        <input type="text" value="<?php echo $TA->tinggibadanbunda?>" name= "tinggibadanbunda" class="form-control1" id="focusedinput">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Tekanan Darah</h5></label>
+                                        <div class="col-sm-8">                                    
+                                        <input type="text" value="<?php echo $TA->tekanandarah?>" name= "tekanandarah" class="form-control1" id="focusedinput">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Berat Janin</h5></label>
+                                        <div class="col-sm-8">                                    
+                                        <input type="text" value="<?php echo $TA->beratjanin?>" name= "beratjanin" class="form-control1" id="focusedinput">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Panjang Janin</h5></label>
+                                        <div class="col-sm-8">                                    
+                                        <input type="text" value="<?php echo $TA->panjangjanin?>" name= "panjangjanin" class="form-control1" id="focusedinput">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Detak Jantung Janin</h5></label>
+                                        <div class="col-sm-8">                                      
+                                        <input type="text" value="<?php echo $TA->detakjantungjanin?>" name= "detakjantungjanin" class="form-control1" id="focusedinput">
+                                        </div>
+                                        </div>
+                                       
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Obat Yang Dikonsumsi</h5></label>
+                                        <div class="col-sm-8">                                    
+                                        <input type="text" value="<?php echo $TA->obatyangdikonsumsi?>" name= "obatyangdikonsumsi" class="form-control1" id="focusedinput">
+                                        </div>
+                                        </div>
 
                                               <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                                               <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>

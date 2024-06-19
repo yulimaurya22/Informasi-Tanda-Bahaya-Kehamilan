@@ -56,7 +56,9 @@ foreach($bahayaRingan as $BR) : ?>
                                     
                                                                 
                                     <div class="row">
-			                        <div class="col-sm-8 col-sm-offset-2" >         
+			                        <div class="col-sm-8 col-sm-offset-2" >  
+                              <td><?php echo anchor('BahayaRingan/selengkapnya/'.$BR->id, '<div class="btn btn-success">Detail</div>')?></td>
+
 			                        <a class="btn btn-warning" data-toggle="modal"  style="background-color:	#FF8C00;" data-target="#modal-EditData<?php echo $BR->id?>">Edit</a>
                                     <div class="modal fade" id="modal-EditData<?php echo $BR->id?>">
                                     <div class="modal-dialog">
@@ -76,9 +78,27 @@ foreach($bahayaRingan as $BR) : ?>
                                         </div>
                                        
                                                                   
-                                        <div class="form-group">                                                                       
+                                        <div class="form-group">        
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Keterangan</h5></label>                                                                                                                                                                    
                                         <input type="text" value="<?php echo $BR->keterangan?>" name= "keterangan"  class="form-control" id="focusedinput">
                                         </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Gejala</h5></label>                                                                                                                
+                                        <input type="text"  value="<?php echo $BR->gejala?>" cols="50" name= "gejala"  class="form-control" id="focusedinput">
+                                        </div>
+                                       
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Penyebab</h5></label>                                                                       
+                                       <br> <input type="text" style="white-space: pre-wrap;"  cols="50" value="<?php echo $BR->penyebab?>" name= "penyebab"  class="form-control" id="focusedinput"><br>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Cara Penanganan</h5></label>                                                                      
+                                        <input type="text" value="<?php echo $BR->penanganan?>" name= "penanganan"  class="form-control" id="focusedinput">
+                                        </div>
+                                        
                                         
 
 
@@ -98,7 +118,7 @@ foreach($bahayaRingan as $BR) : ?>
                                         </div>
                                         
                                         
-                                 
+                       
                                         
                 <a class="btn btn-danger" data-toggle="modal" style="background-color:	#8B0000;" data-target="#modal-DeleteData<?php echo $BR->id ?>"> Delete </a>
                 <div class="modal fade" id="modal-DeleteData<?php echo $BR->id ?>">

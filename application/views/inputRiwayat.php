@@ -60,7 +60,7 @@
 		<div class="row" >
 			<div class="col-sm-8 col-sm-offset-2" style = "position: relative; left: 20px;">
 				<button type="submit" class="btn-success btn" style="background-color:	#8B0000;">Submit</button>
-                <a href="<?= base_url('RiwayatPeriksa')?>"> <input class="btn-default btn"  type=button value="Cancel"></a>
+                <a href="<?= base_url('TambahAkun/detail')?>"> <input class="btn-default btn"  type=button value="Cancel"></a>
 				
 			</div>
 		</div>

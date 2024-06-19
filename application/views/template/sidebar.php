@@ -52,10 +52,6 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-<!-- Heading -->
-<div class="sidebar-heading">
-    History
-</div>
 
 <!-- Nav Item - Pages Collapse Menu -->
 
@@ -66,13 +62,14 @@
         <i class="far fa-calendar-alt"></i>
         <span>Jam Praktek Bidan</span></a>
 </li>
-
-<!-- Nav Item - Tables -->
 <li class="nav-item">
-    <a class="nav-link" href="<?= base_url('RiwayatPeriksa')?>">
-        <i class="	fas fa-calendar-check"></i>
+    <a class="nav-link" href="<?= base_url('TambahAkun/pasien')?>">
+        <i class="far fa-calendar-alt"></i>
         <span>Riwayat Periksa</span></a>
 </li>
+
+<!-- Nav Item - Tables -->
+
 <hr class="sidebar-divider">
 
 <!-- Nav Item - Charts -->

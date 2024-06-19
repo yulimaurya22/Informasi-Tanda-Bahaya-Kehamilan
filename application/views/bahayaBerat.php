@@ -56,7 +56,11 @@ foreach($bahayaBerat as $BH) : ?>
                                     
                                                                 
                                     <div class="row">
-			                        <div class="col-sm-8 col-sm-offset-2" >         
+			                        <div class="col-sm-8 col-sm-offset-2" >    
+                              <td><?php echo anchor('BahayaBerat/detail/'.$BH->id, '<div class="btn btn-success">Detail</div>')?></td>
+
+                                
+                              
 			                        <a class="btn btn-warning" data-toggle="modal"  style="background-color:	#FF8C00;" data-target="#modal-EditData<?php echo $BH->id?>">Edit</a>
                                     <div class="modal fade" id="modal-EditData<?php echo $BH->id?>">
                                     <div class="modal-dialog">
@@ -70,16 +74,36 @@ foreach($bahayaBerat as $BH) : ?>
                                     <div class="modal-body">
                                         <form class="form-horizontal" name="username" action="<?= base_url('BahayaBerat/editData') ?>" method="post">
                                                                                                            
-                                        <div class="form-group">                                                  
+                                        <div class="form-group">                     
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Judul</h5></label>                              
                                         <input type="hidden" value="<?php echo $BH->id ?>" name="id"></input>                
-                                        <input type="text" value="<?php echo $BH->judul ?>"  name= "judul" class="form-control" id="focusedinput" placeholder="username">
+                                        <input type="text" value="<?php echo $BH->judul ?>"  name= "judul" class="form-control" id="focusedinput" >
                                         </div>
                                        
-                                                                  
-                                        <div class="column"  >                                                                       
-                                        <textarea type="text" value="<?php echo $BH->keterangan?>"  name= "keterangan" class="form-control" id="focusedinput" required></textarea>
-                                        </div> 
+
+                                        <div class="form-group">                                              
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Pengertian</h5></label> 
+                                        <input type="text" value="<?php echo $BH->keterangan ?>"  name= "keterangan" class="form-control" id="focusedinput">
+                                        </div>
                                         
+                                        
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Gejala</h5></label>                                                                                                                
+                                        <input type="text"  value="<?php echo $BH->gejala?>" cols="50" name= "gejala"  class="form-control" id="focusedinput">
+                                        </div>
+                                       
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Penyebab</h5></label>                                                                       
+                                      <input type="text"  cols="50" value="<?php echo $BH->penyebab?>" name= "penyebab"  class="form-control" id="focusedinput"><br>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>Cara Penanganan</h5></label>                                                                      
+                                        <input type="text" value="<?php echo $BH->penanganan?>" name= "penanganan"  class="form-control" id="focusedinput">
+                                        </div>                                       
+                                        
+
 
 
                                         <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>

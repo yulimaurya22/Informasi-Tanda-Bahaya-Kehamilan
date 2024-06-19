@@ -41,7 +41,7 @@ class BahayaBerat extends CI_Controller
 
     function editData()   {   
       $this->bahayaBerat_model->edit_data($this->input->post());
-      redirect('BahayaBerat');       
+      redirect ('BahayaBerat');       
              }
 
    public function deleteData()   {   
@@ -57,5 +57,19 @@ class BahayaBerat extends CI_Controller
   $this->load->view('template/topbar');
   $this->load->view('bahayaBerat', $data);
   $this->load->view('template/footer');} 
+
+  public function detail($id)
+    {
+     $data['title'] = 'Detail';
+     $this->load->model('bahayaBerat_model');
+     $detail= $this->bahayaBerat_model->detail($id);
+     $data['detail'] = $detail;
+    
+     $this->load->view('template/header');
+     $this->load->view('template/sidebar');
+     $this->load->view('template/topbar');
+     $this->load->view('detailBerat', $data);
+     $this->load->view('template/footer');
+    } 
   
  }

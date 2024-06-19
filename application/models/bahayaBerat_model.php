@@ -9,12 +9,12 @@ class bahayaBerat_model extends CI_Model {
    
     public function insert_data($bahayaberat)
     {
-        $data = array('judul'=>$bahayaberat['judul'], 'keterangan'=>$bahayaberat['keterangan']);
+        $data = array('judul'=>$bahayaberat['judul'], 'keterangan'=>$bahayaberat['keterangan'], 'gejala'=>$bahayaberat['gejala'], 'penyebab'=>$bahayaberat['penyebab'], 'penanganan'=>$bahayaberat['penanganan']);
       $this->db->insert('tbl_berat', $data);    
     }
 
     public function edit_data($bahayaberat){
-      $data = array('judul'=>$bahayaberat['judul'], 'keterangan'=>$bahayaberat['keterangan']);
+      $data = array('judul'=>$bahayaberat['judul'], 'keterangan'=>$bahayaberat['keterangan'], 'gejala'=>$bahayaberat['gejala'], 'penyebab'=>$bahayaberat['penyebab'], 'penanganan'=>$bahayaberat['penanganan']);
       $this->db->where('id',$bahayaberat['id']);
       $this->db->update('tbl_berat', $data);
  }
@@ -22,7 +22,7 @@ class bahayaBerat_model extends CI_Model {
  public function del_data(){
       
     $id = $this->input->post('id');
-    $this->db->where('id',$id);
+    $this->db->where('id',$id); 
     $this->db->delete('tbl_berat');
   }
 
@@ -32,6 +32,11 @@ class bahayaBerat_model extends CI_Model {
     $this->db->like('judul',$keyword);
     $this->db->or_like('keterangan',$keyword);
     return $this->db->get()->result();
+  }
+
+  public function detail($id = NULL){
+    $query = $this->db->get_where('tbl_berat', array('id' => $id))->row();
+    return $query;
   }
 }
 ?>

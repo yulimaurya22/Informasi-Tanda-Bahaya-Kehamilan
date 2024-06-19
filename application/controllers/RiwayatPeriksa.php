@@ -15,8 +15,7 @@ class RiwayatPeriksa extends CI_Controller
    function index()
    {
       $data['title'] = 'Riwayat Periksa';
-      $data['riwayatPeriksa'] = $this->riwayat_model->get_data('tbl_riwayat')->result();
-\
+      $data['rperiksa'] = $this->riwayat_model->get_data('tbl_riwayat')->result();
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
@@ -36,7 +35,7 @@ class RiwayatPeriksa extends CI_Controller
 
     function tambahaksi()   {   
       $this->riwayat_model->insert_data($this->input->post());
-      redirect('RiwayatPeriksa');
+      redirect('TambahAkun/detail');
       }
 
    function editData()   {   

@@ -1,3 +1,5 @@
+
+
 <div id="wrapper">
     <div class="container-fluid">
 	<section class="forms">
@@ -22,6 +24,23 @@
 									<label for="disabledinput" class="col-sm-2 control-label">Keterangan</label>
 									<textarea type="text" name="keterangan" rows="5" class="col-sm-9 control-form" id="focusedinput" placeholder="" required></textarea>
 									</div>	
+
+									<div class="form-group" style = "position: relative; top: 30px;">
+									<label for="disabledinput" class="col-sm-2 control-label">Gejala</label>
+									<textarea type="text" name="gejala" rows="5" class="col-sm-9 control-form" id="focusedinput" placeholder="" required></textarea>
+									</div>	
+
+									<div class="form-group" style = "position: relative; top: 30px;">
+									<label for="disabledinput" class="col-sm-2 control-label">Penyebab</label>
+									<textarea type="text" name="penyebab" rows="5" class="col-sm-9 control-form" id="focusedinput" placeholder="" required></textarea>
+									</div>	
+
+									<div class="form-group" style = "position: relative; top: 30px;">
+									<label for="disabledinput" class="col-sm-2 control-label">Cara Penanganan</label>
+									<textarea type="text" name="penanganan" rows="5" class="col-sm-9 control-form" id="focusedinput" placeholder="" required></textarea>
+									</div>	
+
+									
                                     
 
 									<center>
@@ -37,4 +56,5 @@
   </div>
   </div>
       </div>
-    
+	 
+
