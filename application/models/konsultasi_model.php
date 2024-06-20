@@ -11,5 +11,6 @@ class konsultasi_model extends CI_Model {
         $data = array('pesan'=>$konsultasi['pesan']); 
              $this->db->insert('tbl_chat', $data);    
     }
+
 }
 ?>

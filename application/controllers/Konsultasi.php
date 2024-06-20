@@ -28,5 +28,15 @@ class Konsultasi extends CI_Controller
     $this->konsultasi_model->insert_data($this->input->post());
     redirect('Konsultasi');
     }
+
+    
+
+    public function store(){
+      $data = array(
+        'pesan'=> $this->input->post('pesan')
+      );
+
+      $this->db->insert('tbl_chat', $data);
+    }
   }
   ?>

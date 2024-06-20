@@ -24,7 +24,7 @@
 
 <div style = "position: relative; left: 1000px;">
 <div style = "position: relative; top: -70px;">
-<a href=<?= base_url('RiwayatPeriksa/tambah') ?> ><input class="btn"   style="background-color:	#B0E0E6;"  type=button value="+ Tambah Data"></a>
+<a href=<?= base_url('TambahAkun/tambah2') ?> ><input class="btn"   style="background-color:	#B0E0E6;"  type=button value="+ Tambah Data"></a>
 </div> 
 </div> 
 
@@ -236,6 +236,8 @@
                         </div>
                     </div>
                    
+                    <?php $no = 1;
+                    foreach($rperiksa as $periksa) : ?>  
                    
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -244,12 +246,8 @@
                         <div class="card-body">
                         <div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
-
+            
                         <div class="form-group" >
-                        <?php $no = 1;
-                                    foreach($rperiksa as $periksa) : ?>                                   							
- 
-                        
 								    <div class="form-group" >
 									<label for="disabledinput" class="col-sm-2 control-label">Nama Bunda</label>
                                    	<label for="disabledinput" class="control-label">: <?php echo $periksa->namabunda ?></label>
@@ -309,28 +307,13 @@
                                       <h3 class="col-sm-8 control-label" style="color:#000000;"><b>Edit Data</h3>
                                     </div>
                                     <div class="modal-body">
-                                        <form class="form-horizontal" name="username" action="<?= base_url('RiwayatPeriksa/editData') ?>" method="post">
+                                        <form class="form-horizontal" name="username" action="<?= base_url('TambahAkun/editData3') ?>" method="post">
                                                                         
-                                        <div class="form-group">
-                                                <label for="disabledinput" class="col-sm-8 control-label"><h5>Username</h5></label>                                   
-                                                <div class="col-sm-8">            
-                                                <input type="hidden" value="<?php echo $periksa->id ?>" name="id"></input>                
-                                                  <input type="text" value="<?php echo $periksa->username ?>" name= "username" class="form-control1" id="focusedinput">
-                                                </div>
-                                                </div>
-                                              
-                                                                  
-                                                <div class="form-group">
-                                                <label for="disabledinput" class="col-sm-8 control-label"><h5>Password</h5></label>
-                                                <div class="col-sm-8">                                    
-                                                  <input type="password" value="<?php echo $periksa->password ?>" name= "password" class="form-control1" id="focusedinput">
-                                                </div>
-                                                </div>
-                                                
-
+                                        
                                         <div class="form-group">
                                         <label for="disabledinput" class="col-sm-8 control-label"><h5>Nama Bunda</h5></label>                                   
                                         <div class="col-sm-8">                   
+                                        <input type="hidden" value="<?php echo $periksa->id ?>" name="id"></input>  
                                         <input type="text" value="<?php echo $periksa->namabunda ?>" name= "namabunda" class="form-control1" id="focusedinput" >
                                         </div>
                                         </div>
@@ -418,7 +401,7 @@
                        
                                     </div>
                                     <div class="modal-body">
-                                        <form class="form-horizontal" action="<?= base_url('RiwayatPeriksa/deleteData')?>" method="post">
+                                        <form class="form-horizontal" action="<?= base_url('TambahAkun/deleteData2')?>" method="post">
                                               <div class="form-group">
                                                 <label style = "position: relative; left: 20px;"><H5><b>Anda Yakin Akan Menghapus Akun Ini...?</H5></label>
                                                 <input type="hidden" value="<?php echo $periksa->id ?>" name="id">                         
@@ -436,14 +419,20 @@
                                           </div>
                                         </div>
                                       </div>                        
+                                       
+                                     
+                                      
                                       </div>  
-                                      <?php endforeach ?>   
-                                      
+                                      </div>
+                                      </div>
+                                         
                                       </div>     
-                                      </div>     
-                                      </div>     
-                                      
-                            </div>
+                                        </div></div>    
+                                        </div> 
+                                       
+                          
                         </div>
-                    </div>
+                        <?php endforeach ?>  
+                    
                    
+                 

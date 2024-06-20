@@ -5,7 +5,8 @@ class TambahAkun extends CI_Controller
    {
        parent::__construct();
      
-       $this->load->model('tambahAkun_model');    
+       $this->load->model('tambahAkun_model');  
+       
        if(empty($this->session->userdata('username'))) {
          redirect('Login');
              
@@ -26,6 +27,7 @@ class TambahAkun extends CI_Controller
     function pasien() {
       $data['title'] = 'Riwayat Periksa';
       $data['tambahAkun'] = $this->tambahAkun_model->get_data('tbl_akun')->result();
+     
 
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
@@ -79,13 +81,24 @@ class TambahAkun extends CI_Controller
   $this->load->view('tambahAkun', $data);
   $this->load->view('template/footer');} 
 
+  public function search2()   {   
+    $keyword = $this->input->post('keyword');
+    $data['tambahAkun']=$this->tambahAkun_model->getkeyword($keyword);
+    
+    $this->load->view('template/header');
+    $this->load->view('template/sidebar');
+    $this->load->view('template/topbar');
+    $this->load->view('pasien', $data);
+    $this->load->view('template/footer');} 
+
   public function detail($id)
     {
      $data['title'] = 'Detail';
      $this->load->model('tambahAkun_model');
      $riwayatPeriksa= $this->tambahAkun_model->detail($id);
      $data['riwayatPeriksa'] = $riwayatPeriksa;
-    
+     $data['rperiksa'] = $this->tambahAkun_model->getdata('tbl_riwayat')->result();
+
      $this->load->view('template/header');
      $this->load->view('template/sidebar');
      $this->load->view('template/topbar');
@@ -93,8 +106,30 @@ class TambahAkun extends CI_Controller
      $this->load->view('template/footer');
     } 
 
-    
+    function tambahaksi2()   {   
+      $this->tambahAkun_model->insertdata($this->input->post());
+      redirect('TambahAkun/pasien');
+      }
   
+      function tambah2()
+      {
+       $data['title'] = 'Riwayat Periksa';
+      
+       $this->load->view('template/header',  $data);
+       $this->load->view('template/sidebar',  $data);
+       $this->load->view('template/topbar' );
+       $this->load->view('inputRiwayat');
+       $this->load->view('template/footer');
+      } 
      
+      function editData3()   {   
+        $this->tambahAkun_model->editdata($this->input->post());
+        redirect('TambahAkun/pasien');       
+               }
+  
+     public function deleteData2()   {   
+        $this->tambahAkun_model->deldata();
+        redirect('TambahAkun/pasien');       
+                 }
   
    }

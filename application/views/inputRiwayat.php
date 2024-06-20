@@ -9,7 +9,7 @@
 
   	         <div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
-							<form class="form-horizontal"  name= "frmriwayat" action="<?= base_url('RiwayatPeriksa/tambahaksi')?>" method="POST">
+							<form class="form-horizontal"  name= "frmriwayat" action="<?= base_url('TambahAkun/tambahaksi2')?>" method="POST">
 
 								    <div class="form-group" >
 									<label for="disabledinput" class="col-sm-2 control-label">Nama Bunda</label>
@@ -60,7 +60,7 @@
 		<div class="row" >
 			<div class="col-sm-8 col-sm-offset-2" style = "position: relative; left: 20px;">
 				<button type="submit" class="btn-success btn" style="background-color:	#8B0000;">Submit</button>
-                <a href="<?= base_url('TambahAkun/detail')?>"> <input class="btn-default btn"  type=button value="Cancel"></a>
+                <a href="<?= base_url('TambahAkun/pasien')?>"> <input class="btn-default btn"  type=button value="Cancel"></a>
 				
 			</div>
 		</div>
