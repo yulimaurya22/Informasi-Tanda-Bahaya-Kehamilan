@@ -12,10 +12,9 @@ foreach($profil as $pl): ?>
 foreach($login as $lg): ?>
 <div class="card shadow mb-4 " style="position: relative; top: 30px;">
                         <div class="card-header py-3">
-                        <img src="<?php echo base_url(); ?>asset/img/<?php echo $pl->foto;?>">
-                        <a href=<?= base_url('Profil/foto') ?> ><input class="btn"   style="background-color:	#B0E0E6;"  type=button value="edit foto profil"></a>
-
-                            <h4 class="m-0 font-weight-bold text-primary"><?=$pl->nama ?></h4>
+                       <center> <img src="<?php echo base_url(); ?>asset/img/<?php echo $pl->foto;?>" width="200" >
+                      
+                            <h4 class="m-0 font-weight-bold text-primary"><?=$pl->nama ?></h4></center>
                         </div>
                         <div class="card-body">
                         <div class="tab-content">
@@ -67,15 +66,19 @@ foreach($login as $lg): ?>
                                       <h3 class="col-sm-8 control-label" style="color:#000000;"><b>Edit Profil</h3>
                                     </div>
                                     <div class="modal-body">
-                                               <form class="form-horizontal" name="username" action="<?= base_url('Profil/editData') ?>" method="post">
-                                       
+                                               
+                                       <?php echo form_open_multipart('Profil/editData'); ?>
                                     <div class="form-group">                     
                                         <label for="disabledinput" class="col-sm-8 control-label"><h5>Nama</h5></label>                              
                                         <input type="hidden" value="<?php echo $pl->id ?>" name="id"></input>                
                                         <input type="text" value="<?php echo $pl->nama ?>"  name= "nama" class="form-control" id="focusedinput" >
                                         </div>
-                                    
-                                      
+                                        <div class="form-group">      
+                                        <label for="disabledinput" class="col-sm-8 control-label"><h5>foto</h5></label>                              
+                                        <input type="file" name= "foto" class="form-control" id="focusedinput" >
+                                        <img src="<?php echo base_url(); ?>asset/img/<?php echo $pl->foto;?>" width="100"> 
+                                        </div>
+                                     
 
                                         <div class="form-group">                                              
                                         <label for="disabledinput" class="col-sm-8 control-label"><h5>Alamat</h5></label> 
@@ -153,7 +156,7 @@ foreach($login as $lg): ?>
                                         <button type="submit" class=" btn"  style="background-color:	#B0E0E6;">Save</button>
                                               
                                         </div>
-                                        </form>
+                                        <?php echo form_close();?>
                                         </div>
                                         </div>
                                         </div>

@@ -7,21 +7,20 @@ class Profil extends CI_Controller
       parent::__construct();
       $this->load->model('profil_model');  
       $this->load->model('login_model');  
-      $this->load->model('foto_model');
         
     if(empty($this->session->userdata('username'))) {
       redirect('Login');
           
     }  
         
-   }
+   } 
 
    function index()
    { 
     $data['title'] = 'Profil Admin';
     $data['profil'] = $this->profil_model->get_data('tbl_profil')->result();
     $data['login'] = $this->login_model->get_data('login')->result();
-    $data['foto'] = $this->foto_model->get_data('tbl_foto')->result();
+
 
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
@@ -30,35 +29,56 @@ class Profil extends CI_Controller
     $this->load->view('template/footer');} 
 
     function editData()   {   
-      $this->profil_model->edit_data($this->input->post());     
-      redirect ('Profil');       
-             }
+      $id = $this->input->post('id');
+      $config['upload_path'] = './asset/img/';
+      $config['allowed_types'] = 'gif|jpg|png|PNG';
+      $config['max_size'] = 10000;
+      $config['max_width'] = 10000;
+      $config['max_height'] = 10000;
 
-             public function foto() {
-              $data['title'] = 'Profil Admin';
-              $this->load->view('template/header', $data);
-              $this->load->view('template/sidebar', $data);
-              $this->load->view('template/topbar', $data);
-              $this->load->view('upfoto');
-              $this->load->view('template/footer');} 
+      $this->load->library('upload', $config);
+      if (! $this->upload->do_upload('foto'))
+      {
+        $nama = $this->input->post('nama', TRUE);
+        $alamat = $this->input->post('alamat', TRUE);
+        $jeniskelamin = $this->input->post('jeniskelamin', TRUE);
+        $telp = $this->input->post('telp', TRUE);
+        $data = array(
+          'nama' => $nama,
+          'alamat' => $alamat,
+          'jeniskelamin' => $jeniskelamin,
+          'telp' =>$telp,
+        );
+        $this->db->where('id', $id);
+        $this->db->update('tbl_profil', $data);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+        Data Berhasil Diubah!</dv>');   
+       redirect ('Profil');       
+     }
+     else{
+      $foto = $this->upload->data();
+      $foto = $foto['file_name'];
+      $nama = $this->input->post('nama', TRUE);
+      $alamat = $this->input->post('alamat', TRUE);
+      $jeniskelamin = $this->input->post('jeniskelamin', TRUE);
+      $telp = $this->input->post('telp', TRUE);
+      $data = array(
+        'nama' => $nama,
+        'alamat' => $alamat,
+        'jeniskelamin' => $jeniskelamin,
+        'telp' =>$telp,
+        'foto' => $foto,
+      );
+      $this->db->where('id', $id);
+      $this->db->update('tbl_profil', $data);
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+      Data Berhasil Diubah!</dv>');   
+     redirect ('Profil');       
+   }
+  }
+     
+    
 
-
-              public function foto2() {          
-              $foto = $_FILES['foto'];
-              if ($foto=''){}else{
-                $config['upload_path'] ='./asset/img';
-                $config['allowed_types'] = 'jpg|png|gif';
-        
-                $this->load->library('upload', $config);
-                if(!$this->upload->do_upload('foto')){
-                  echo "Upload Gagal"; die();
-                }else {
-                  $foto=$this->upload->data('file_name');
-                }
-              }
-
-               redirect ('Profil');       
-             }
 
              function edit_Data()   {   
               $this->login_model->editdata($this->input->post());
