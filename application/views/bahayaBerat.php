@@ -23,20 +23,19 @@
 <p class="mb-4">Tanda bahaya kehamilan yang berat adalah gejala atau kondisi yang memerlukan perhatian medis <br>
   segera karena dapat membahayakan kesehatan ibu dan janin<a target="_blank"></a></p>
 
-<div style = "position: relative; top: 20px;">
-
-<a href=<?= base_url('BahayaBerat/tambah') ?> ><input class="btn"   style="background-color:	#B0E0E6;"  type=button value="+ Tambah Data"></a>
-
-</div> 
-
-<div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style = "position: relative; top: -20px;">
-<div style = "position: relative; left: 900px;">
+  
+<div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 <?php echo form_open('BahayaBerat/search')?>
 <input type="text" name="keyword" class="form-control" placeholder="search">
 <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
 <?php echo form_close()?>
 </div>
-</div>
+
+
+
+<a href=<?= base_url('BahayaBerat/tambah') ?> ><input class="btn"   style="background-color:	#B0E0E6;"  type=button value="+ Tambah Data"></a>
+
+
 
 <?php $no = 1;
 foreach($bahayaBerat as $BH) : ?>

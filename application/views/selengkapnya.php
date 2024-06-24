@@ -20,14 +20,17 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+    
     <div class="container-fluid">
 
 <!-- Page Heading -->
 
 
     <div class="card shadow mb-4">
+    
                         <div class="card-header py-3">
-                            <h4 class="m-0 font-weight-bold text-primary"><?php echo $selengkapnya->judul ?></h4>
+                        <a class="fas fa-arrow-left" href="<?= base_url('BahayaRingan')?>"></a>
+                        <font size="5"><span class="col-sm-8 font-weight-bold text-primary"><?php echo $selengkapnya->judul ?></span></font>
                         </div>
                         <div class="card-body">
                         <div class="tab-content">

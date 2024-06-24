@@ -22,14 +22,14 @@
 <h1 class="h3 mb-2 text-gray-800">History / Riwayat Periksa Bunda</h1>
 
 
-<div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style = "position: relative; top: -20px;">
-<div style = "position: relative; left: 900px;">
+<div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+
 <?php echo form_open('TambahAkun/search2')?>
 <input type="text" name="keyword" class="form-control" placeholder="search">
 <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
 <?php echo form_close()?>
 </div>
-</div>
+
 
     <div class="card shadow mb-4">
                         <div class="card-header py-3">

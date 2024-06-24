@@ -17,16 +17,17 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
     <div class="container-fluid">
+    
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">History / Riwayat Periksa Bunda</h1>
+<a class="fas fa-arrow-left" href="<?= base_url('TambahAkun/pasien')?>"></a>
+<span class="h3 mb-2 text-gray-800">History / Riwayat Periksa Bunda</span>
+
 <p class="mb-4">data bunda yang sudah periksa ke bidan akan dicantumkan di Riwayat Periksa <a target="_blank"></a></p>
 
-<div style = "position: relative; left: 1000px;">
-<div style = "position: relative; top: -70px;">
+
 <a href=<?= base_url('TambahAkun/tambah2') ?> ><input class="btn"   style="background-color:	#B0E0E6;"  type=button value="+ Tambah Data"></a>
-</div> 
-</div> 
+
 
     <div class="card shadow mb-4">
                         <div class="card-header py-3">

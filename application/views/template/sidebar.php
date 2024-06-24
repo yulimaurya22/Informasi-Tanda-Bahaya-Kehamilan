@@ -6,7 +6,7 @@
     <div class="sidebar-brand-icon rotate-n-15" >
         <i class="fas fa-laugh-wink" ></i>
     </div>
-    <div class="sidebar-brand-text mx-3"> Informasi Kehamilan<sup></sup></div>
+    <div class="sidebar-brand-text mx-3" > Informasi Kehamilan<sup></sup></div>
 </a>
 
 <!-- Divider -->
@@ -74,10 +74,21 @@
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-    <a class="nav-link" href="<?= base_url('TambahAkun')?>">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-user-plus"></i>
-        <span>Tambah Akun</span></a>
+        <span>User</span>
+    </a>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">            
+            <a class="collapse-item" href="<?= base_url('TambahAkun')?>">Tambah Akun</a>
+            <a class="collapse-item" href="<?= base_url('Profil')?>">Profil</a>
+            <a class="collapse-item" href="<?= base_url('Login/logout')?>">Logout</a>
+        </div>
+    </div>
 </li>
+
+
 
 <!-- Divider --> 
 <hr class="sidebar-divider d-none d-md-block">

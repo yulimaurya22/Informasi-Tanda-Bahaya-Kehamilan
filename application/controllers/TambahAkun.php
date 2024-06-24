@@ -133,3 +133,4 @@ class TambahAkun extends CI_Controller
                  }
   
    }
+   ?>

@@ -17,6 +17,7 @@
     <div class="container-fluid">
 
 <!-- Page Heading -->
+ 
 <h1 class="h3 mb-2 text-gray-800">Jam Buka Bidan</h1>
 <p class="mb-4">Hari biasa buka kecuali hari minggu. libur praktek jika terdapat tanggal merah <a target="_blank"></a></p>
 

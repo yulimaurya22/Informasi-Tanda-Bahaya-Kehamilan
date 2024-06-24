@@ -29,7 +29,20 @@ class Konsultasi extends CI_Controller
     redirect('Konsultasi');
     }
 
-    
+    public function Detail($id)
+    {
+     $data['title'] = 'Detail';
+     $this->load->model('tambahAkun_model');
+     $detail= $this->tambahAkun_model->detail($id);
+     $data['detail'] = $detail;
+     $data['konsultasi'] = $this->konsultasi_model->get_data('tbl_chat')->result();
+
+     $this->load->view('template/header');
+     $this->load->view('template/sidebar');
+     $this->load->view('template/topbar');
+     $this->load->view('detailChat', $data);
+     $this->load->view('template/footer');
+    } 
 
     public function store(){
       $data = array(

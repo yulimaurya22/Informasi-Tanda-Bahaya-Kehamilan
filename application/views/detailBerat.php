@@ -24,8 +24,9 @@
 
     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h4 class="m-0 font-weight-bold text-primary"><?php echo $detail->judul ?></h4>
-                        </div>
+                        <a class="fas fa-arrow-left" href="<?= base_url('BahayaBerat')?>"></a>
+                        <font size="5"><span class="col-sm-8 font-weight-bold text-primary"><?php echo $detail->judul ?></span></font>
+                          </div>
                         <div class="card-body">
                         <div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
