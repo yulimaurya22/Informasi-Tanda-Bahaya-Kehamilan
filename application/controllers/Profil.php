@@ -53,7 +53,7 @@ class Profil extends CI_Controller
         $this->db->update('tbl_profil', $data);
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
         Data Berhasil Diubah!</dv>');   
-       redirect ('Profil');       
+       redirect ('Profil');        
      }
      else{
       $foto = $this->upload->data();

@@ -31,8 +31,9 @@
 							<form class="form-horizontal"  name= "chat" action="<?= base_url('Konsultasi/tambahaksi')?>" method="POST">
                                 
                                   
-                                        <div class="modal-footer" >  
-                                        <input type="text" name="pesan" id="pesan" style= "width: 220px; height:40px; " class="control-form" >                                 
+                                        <div class="modal-footer" >                                          
+                                        <input type="text" class="form-control form-control-user" name="pesan"
+                                                 id="pesan" placeholder="Masukkan Pesan..." required style= "width: 220px; height:40px;">
                                         <button type="submit" class=" btn btn-primary btn-block" style= "width: 65px;" onclick="store();">Send</button>
                                         </div>
                                         

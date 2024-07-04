@@ -18,20 +18,64 @@
 
 <!-- Page Heading -->
  
-<h1 class="h3 mb-2 text-gray-800">Jam Buka Bidan</h1>
+<h1 class="h3 mb-2 text-gray-800">Tentang Bidan</h1>
 <p class="mb-4">Hari biasa buka kecuali hari minggu. libur praktek jika terdapat tanggal merah <a target="_blank"></a></p>
+                       
 
+<?php $no = 1;
+foreach($profil as $pl): ?>
 
-    <div class="card shadow mb-4">
+<div class="card shadow mb-4 " style="position: relative; top: 30px;">
                         <div class="card-header py-3">
-                            <h class="m-0 font-weight-bold text-primary"></h9>
+                       <center> <img src="<?php echo base_url(); ?>asset/img/<?php echo $pl->foto;?>" width="200" >
+                      
+                            <h4 class="m-0 font-weight-bold text-primary"><?=$pl->nama ?></h4></center>
                         </div>
                         <div class="card-body">
                         <div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
+                    
+
+                        <div class="form-group" >			
+                                   <label for="disabledinput" class="input_label">Alamat</label>
+                                    <label for="disabledinput" class="col-sm-9 control-label" style="position: relative; right: -75px;">: <?=$pl->alamat ?></label>
+                                        <hr class="sidebar-divider">
+                                    </div> 
+
+                                    <div class="form-group" >			
+                                   <label for="disabledinput" class="input_label">Jenis Kelamin</label>
+                                    <label for="disabledinput"  class="col-sm-9 control-label" style="position: relative; right: -30px;" >: <?=$pl->jeniskelamin ?></label>
+                                        <hr class="sidebar-divider">
+                                    </div> 
+
+                                    <div class="form-group" >			
+                                   <label for="disabledinput" class="input_label">No. Telp</label>
+                                    <label for="disabledinput" class="col-sm-9 control-label" style="position: relative; right: -65px;" >: <?=$pl->telp?></label>
+                                        <hr class="sidebar-divider">
+                                    </div> 
+                                    
+                                    </div>                        
+                                      </div>     
+                                      </div> 
+                                      </div>     
+                                   
+                                      
+                  
+                   
+                    <?php endforeach ?>
+
+
+                    <?php $no = 1;
+                    foreach($jadwalPeriksa as $JP) : ?>
+    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h4 class="m-0 font-weight-bold text-primary">Jam Buka Bidan</h4>
+                           </div>
+                        <div class="card-body">
+                        <div class="tab-content">
+						<div class="tab-pane active" id="horizontal-form">
 							
-                        <?php $no = 1;
-                                    foreach($jadwalPeriksa as $JP) : ?>
+                       
 								    <div class="form-group" >
 									<label for="disabledinput" class="col-sm-2 control-label">Senin        :</label>
                                    	<label for="disabledinput" class="col-sm-5 control-label"><?=$JP->senin ?></label>
@@ -151,14 +195,17 @@
                                         </div>
                                  
                 
-                                            </form>
+                                           
                                           </div>
                                         </div>
                                       </div>                        
                                       
                             </div>
                         </div>
-                    </div>
+                        </div>
+                        </div>
+                   
+
                     <?php endforeach ?>
 
                     

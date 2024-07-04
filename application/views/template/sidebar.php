@@ -57,15 +57,17 @@
 
 
 <!-- Nav Item - Charts -->
-<li class="nav-item">
-    <a class="nav-link" href="<?= base_url('JadwalPeriksa')?>">
-        <i class="far fa-calendar-alt"></i>
-        <span>Jam Praktek Bidan</span></a>
-</li>
+
 <li class="nav-item">
     <a class="nav-link" href="<?= base_url('TambahAkun/pasien')?>">
         <i class="far fa-calendar-alt"></i>
         <span>Riwayat Periksa</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="<?= base_url('JadwalPeriksa')?>">
+        <i class="far fa-calendar-alt"></i>
+        <span>Tentang</span></a>
 </li>
 
 <!-- Nav Item - Tables -->

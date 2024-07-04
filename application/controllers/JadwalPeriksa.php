@@ -5,6 +5,7 @@ class JadwalPeriksa extends CI_Controller
    {
        parent::__construct();
       $this->load->model('jadwal_model');  
+      $this->load->model('profil_model');  
       if(empty($this->session->userdata('username'))) {
          redirect('Login');
              
@@ -16,6 +17,7 @@ class JadwalPeriksa extends CI_Controller
    {
       $data['title'] = 'Jadwal Periksa';
       $data['jadwalPeriksa'] = $this->jadwal_model->get_data('tbl_jadwal')->result();
+      $data['profil'] = $this->profil_model->get_data('tbl_profil')->result();
 
      
     $this->load->view('template/header', $data);
