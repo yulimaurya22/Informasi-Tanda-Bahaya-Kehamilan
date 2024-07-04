@@ -48,5 +48,95 @@ class Api extends RestController {
             ], 404);
         }
     }
+
+    public function lainnya_get(){
+        $getData = $this->api->tampil_lainnya();
+        if($getData->num_rows() != 0) {
+            $data = [
+                'status' => 'berhasil',
+                'result' => $getData->result_array(),
+                'message' => 'data berhasil didapatkan'
+            ];
+            $this->response($data, 200);
+        } else {
+            $this->response([
+                'status' => 'Failed',
+                'result' => [],
+                'message' => 'gagal memperoleh data'
+            ], 404);
+        }
+    }
+
+    public function chat_get(){
+        $getData = $this->api->tampil_chat();
+        if($getData->num_rows() != 0) {
+            $data = [
+                'status' => 'berhasil',
+                'result' => $getData->result_array(),
+                'message' => 'data berhasil didapatkan'
+            ];
+            $this->response($data, 200);
+        } else {
+            $this->response([
+                'status' => 'Failed',
+                'result' => [],
+                'message' => 'gagal memperoleh data'
+            ], 404);
+        }
+    }
+
+    public function riwayat_get(){
+        $getData = $this->api->tampil_riwayat();
+        if($getData->num_rows() != 0) {
+            $data = [
+                'status' => 'berhasil',
+                'result' => $getData->result_array(),
+                'message' => 'data berhasil didapatkan'
+            ];
+            $this->response($data, 200);
+        } else {
+            $this->response([
+                'status' => 'Failed',
+                'result' => [],
+                'message' => 'gagal memperoleh data'
+            ], 404);
+        }
+    }
+
+    public function jadwal_get(){
+        $getData = $this->api->tampil_jadwal();
+        if($getData->num_rows() != 0) {
+            $data = [
+                'status' => 'berhasil',
+                'result' => $getData->result_array(),
+                'message' => 'data berhasil didapatkan'
+            ];
+            $this->response($data, 200);
+        } else {
+            $this->response([
+                'status' => 'Failed',
+                'result' => [],
+                'message' => 'gagal memperoleh data'
+            ], 404);
+        }
+    }
+
+    public function akun_get(){
+        $getData = $this->api->tampil_akun();
+        if($getData->num_rows() != 0) {
+            $data = [
+                'status' => 'berhasil',
+                'result' => $getData->result_array(),
+                'message' => 'data berhasil didapatkan'
+            ];
+            $this->response($data, 200);
+        } else {
+            $this->response([
+                'status' => 'Failed',
+                'result' => [],
+                'message' => 'gagal memperoleh data'
+            ], 404);
+        }
+    }
   
 } 

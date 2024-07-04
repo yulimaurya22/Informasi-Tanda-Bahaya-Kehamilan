@@ -16,7 +16,7 @@ class Konsultasi extends CI_Controller
    {
       $data['title'] = 'Chat Konsultasi';
       $data['tambahAkun'] = $this->tambahAkun_model->get_data('tbl_akun')->result();
-      $data['konsultasi'] = $this->konsultasi_model->get_data('tbl_chat')->result();
+      $data['konsultasi'] = $this->konsultasi_model->get_data('tbl_pesan')->result();
 
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
@@ -35,7 +35,7 @@ class Konsultasi extends CI_Controller
      $this->load->model('tambahAkun_model');
      $detail= $this->tambahAkun_model->detail($id);
      $data['detail'] = $detail;
-     $data['konsultasi'] = $this->konsultasi_model->get_data('tbl_chat')->result();
+     $data['konsultasi'] = $this->konsultasi_model->get_data('tbl_pesan')->result();
 
      $this->load->view('template/header');
      $this->load->view('template/sidebar');
@@ -49,7 +49,7 @@ class Konsultasi extends CI_Controller
         'pesan'=> $this->input->post('pesan')
       );
 
-      $this->db->insert('tbl_chat', $data);
+      $this->db->insert('tbl_pesan', $data);
     }
   }
   ?>
