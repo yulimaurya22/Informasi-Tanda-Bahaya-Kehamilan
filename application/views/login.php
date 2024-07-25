@@ -39,7 +39,7 @@
                                 <img src="<?php echo base_url()?>asset/img/ibuhamil.jpg">
                             </div>
                             <div class="col-lg-6"> 
-                                <div class="p-5">
+                                <div class="p-5"> 
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome to Aplikasi Informasi Tanda Bahaya Kehamilan</h1>
                                     </div>

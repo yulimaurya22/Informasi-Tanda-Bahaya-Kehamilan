@@ -43,11 +43,6 @@
 
 <!-- Nav Item - Utilities Collapse Menu -->
 
-<li class="nav-item">
-    <a class="nav-link" href="<?= base_url('Konsultasi')?>">
-        <i class="	far fa-comment-alt"></i>
-        <span> Chat Konsultasi</span></a>
-</li>
 
 
 <!-- Divider -->

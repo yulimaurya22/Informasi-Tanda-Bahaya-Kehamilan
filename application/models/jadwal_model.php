@@ -1,5 +1,5 @@
 <?php
-class jadwal_model extends CI_Model {
+class Jadwal_model extends CI_Model {
 
     public function get_data($table)
     {
@@ -12,6 +12,14 @@ class jadwal_model extends CI_Model {
       $this->db->where('id',$jadwalperiksa['id']);
       $this->db->update('tbl_jadwal', $data);
  }
+ 
+  
+      public function edit_data_notif($notifedit)
+     {
+       $data = array('message'=>$notifedit, 'message'=> 'Terdapat Jadwal Jam Buka Terbaru');
+         $this->db->insert('tbl_notif', $data);    
+         return ($this->db->affected_rows() > 0);
+     }
 
 
 }

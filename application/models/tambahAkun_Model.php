@@ -1,5 +1,5 @@
 <?php
-class tambahAkun_model extends CI_Model {
+class TambahAkun_model extends CI_Model {
 
     public function get_data($table)
     {

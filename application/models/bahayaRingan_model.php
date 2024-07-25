@@ -1,5 +1,5 @@
 <?php
-class bahayaRingan_model extends CI_Model {
+class BahayaRingan_model extends CI_Model {
 
     public function get_data($table)
     {
@@ -12,6 +12,19 @@ class bahayaRingan_model extends CI_Model {
         $data = array('judul'=>$bahayaringan['judul'], 'keterangan'=>$bahayaringan['keterangan'], 'gejala'=>$bahayaringan['gejala'], 'penyebab'=>$bahayaringan['penyebab'], 'penanganan'=>$bahayaringan['penanganan']);
       $this->db->insert('tbl_ringan', $data);    
     }
+     public function insert_data_notif($notif)
+     {
+       $data = array('message'=>$notif, 'message'=> 'Terdapat Informasi Kehamilan Ringan Terbaru');
+         $this->db->insert('tbl_notif', $data);    
+         return ($this->db->affected_rows() > 0);
+     }
+     
+      public function edit_data_notif($notifedit)
+     {
+       $data = array('message'=>$notifedit, 'message'=> 'Terdapat Informasi Kehamilan Ringan Terbaru');
+         $this->db->insert('tbl_notif', $data);    
+         return ($this->db->affected_rows() > 0);
+     }
 
     public function edit_data($bahayaringan){
       $data = array('judul'=>$bahayaringan['judul'], 'keterangan'=>$bahayaringan['keterangan'], 'gejala'=>$bahayaringan['gejala'], 'penyebab'=>$bahayaringan['penyebab'], 'penanganan'=>$bahayaringan['penanganan']);

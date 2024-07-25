@@ -5,9 +5,12 @@ class BahayaRingan extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('bahayaRingan_model'); 
+        $this->load->model('BahayaRingan_model'); 
+        $this->load->library('OneSignalLibrary');
         if(empty($this->session->userdata('username'))) {
           redirect('Login');
+   
+
               
         }
        
@@ -15,7 +18,7 @@ class BahayaRingan extends CI_Controller
    function index()
    {
     $data['title'] = 'Bahaya Ringan';
-      $data['bahayaRingan'] = $this->bahayaRingan_model->get_data('tbl_ringan')->result();
+      $data['bahayaRingan'] = $this->BahayaRingan_model->get_data('tbl_ringan')->result();
   
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
@@ -26,7 +29,7 @@ class BahayaRingan extends CI_Controller
     function tambah()
     {
      $data['title'] = 'Bahaya Ringan';
-    
+     
      $this->load->view('template/header',  $data);
      $this->load->view('template/sidebar',  $data);
      $this->load->view('template/topbar' , $data);
@@ -34,23 +37,36 @@ class BahayaRingan extends CI_Controller
      $this->load->view('template/footer');
     } 
 
-    function tambahaksi()   {   
-      $this->bahayaRingan_model->insert_data($this->input->post());
-      redirect('BahayaRingan');
-      }
+    function tambahaksi()   {  
+      $this->BahayaRingan_model->insert_data($this->input->post());
+       $this->BahayaRingan_model->insert_data_notif($this->input->post());
+      
+       $title = "Welcome Baby";
+        $message = "Terdapat Informasi Kehamilan Ringan Terbaru";
+     $this->onesignallibrary->sendNotification($title, $message);
+     
+     redirect('BahayaRingan'); }
+      
+      
 
     function editData()   {   
-      $this->bahayaRingan_model->edit_data($this->input->post());
-      redirect('BahayaRingan');       
-             }
+       
+      $this->BahayaRingan_model->edit_data($this->input->post());
+      $this->BahayaRingan_model->edit_data_notif($this->input->post());
+      
+       $title = "Welcome Baby";
+        $message = "Update Informasi Kehamilan Ringan";
+     $this->onesignallibrary->sendNotification($title, $message);
+      redirect('BahayaRingan'); }
+      
 
    public function deleteData()   {   
-      $this->bahayaRingan_model->del_data();
+      $this->BahayaRingan_model->del_data();
       redirect('BahayaRingan'); }
 
       public function search()   {   
         $keyword = $this->input->post('keyword');
-        $data['bahayaRingan']=$this->bahayaRingan_model->get_keyword($keyword);
+        $data['bahayaRingan']=$this->BahayaRingan_model->get_keyword($keyword);
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('template/topbar');
@@ -60,8 +76,8 @@ class BahayaRingan extends CI_Controller
       public function selengkapnya($id)
     {
      $data['title'] = 'Detail';
-     $this->load->model('bahayaRingan_model');
-     $selengkapnya= $this->bahayaRingan_model->detail($id);
+     $this->load->model('BahayaRingan_model');
+     $selengkapnya= $this->BahayaRingan_model->detail($id);
      $data['selengkapnya'] = $selengkapnya;
     
      $this->load->view('template/header');

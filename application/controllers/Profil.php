@@ -5,8 +5,9 @@ class Profil extends CI_Controller
    function __construct()
    {
       parent::__construct();
-      $this->load->model('profil_model');  
-      $this->load->model('login_model');  
+      $this->load->model('Profil_model');  
+      $this->load->library('OneSignalLibrary');
+      $this->load->model('Login_model');  
         
     if(empty($this->session->userdata('username'))) {
       redirect('Login');
@@ -18,8 +19,8 @@ class Profil extends CI_Controller
    function index()
    { 
     $data['title'] = 'Profil Admin';
-    $data['profil'] = $this->profil_model->get_data('tbl_profil')->result();
-    $data['login'] = $this->login_model->get_data('login')->result();
+    $data['profil'] = $this->Profil_model->get_data('tbl_profil')->result();
+    $data['login'] = $this->Login_model->get_data('login')->result();
 
 
     $this->load->view('template/header', $data);
@@ -29,6 +30,11 @@ class Profil extends CI_Controller
     $this->load->view('template/footer');} 
 
     function editData()   {   
+          $title = "Welcome Baby";
+        $message = "Admin Update Profil Bidan";
+     $this->onesignallibrary->sendNotification($title, $message);
+     $this->Profil_model->edit_data_notif($this->input->post());
+     
       $id = $this->input->post('id');
       $config['upload_path'] = './asset/img/';
       $config['allowed_types'] = 'gif|jpg|png|PNG';
@@ -81,7 +87,7 @@ class Profil extends CI_Controller
 
 
              function edit_Data()   {   
-              $this->login_model->editdata($this->input->post());
+              $this->Login_model->editdata($this->input->post());
               redirect ('Profil');       
                      }
         

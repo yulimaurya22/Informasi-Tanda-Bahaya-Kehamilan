@@ -5,7 +5,8 @@ class BahayaBerat extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('bahayaBerat_model'); 
+        $this->load->model('BahayaBerat_model'); 
+        $this->load->library('OneSignalLibrary');
         if(empty($this->session->userdata('username'))) {
           redirect('Login');
               
@@ -15,7 +16,7 @@ class BahayaBerat extends CI_Controller
    function index()
    {
     $data['title'] = 'Bahaya Berat';
-      $data['bahayaBerat'] = $this->bahayaBerat_model->get_data('tbl_berat')->result();
+      $data['bahayaBerat'] = $this->BahayaBerat_model->get_data('tbl_berat')->result();
    
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
@@ -35,23 +36,31 @@ class BahayaBerat extends CI_Controller
     } 
 
     function tambahaksi()   {   
-      $this->bahayaBerat_model->insert_data($this->input->post());
+      $this->BahayaBerat_model->insert_data($this->input->post());
+       $this->BahayaBerat_model->insert_data_notif($this->input->post());
+      $title = "Welcome Baby";
+        $message = "Terdapat Informasi Kehamilan Berat";
+     $this->onesignallibrary->sendNotification($title, $message);
       redirect('BahayaBerat');
       }
 
     function editData()   {   
-      $this->bahayaBerat_model->edit_data($this->input->post());
+      $this->BahayaBerat_model->edit_data($this->input->post());
+       $this->BahayaBerat_model->edit_data_notif($this->input->post());
+      $title = "Welcome Baby";
+        $message = "Update Informasi Kehamilan Berat";
+     $this->onesignallibrary->sendNotification($title, $message);
       redirect ('BahayaBerat');       
              }
 
    public function deleteData()   {   
-      $this->bahayaBerat_model->del_data();
+      $this->BahayaBerat_model->del_data();
       redirect('BahayaBerat'); }
    
 
    public function search()   {   
   $keyword = $this->input->post('keyword');
-  $data['bahayaBerat']=$this->bahayaBerat_model->get_keyword($keyword);
+  $data['bahayaBerat']=$this->BahayaBerat_model->get_keyword($keyword);
   $this->load->view('template/header');
   $this->load->view('template/sidebar');
   $this->load->view('template/topbar');
@@ -61,8 +70,8 @@ class BahayaBerat extends CI_Controller
   public function detail($id)
     {
      $data['title'] = 'Detail';
-     $this->load->model('bahayaBerat_model');
-     $detail= $this->bahayaBerat_model->detail($id);
+     $this->load->model('BahayaBerat_model');
+     $detail= $this->BahayaBerat_model->detail($id);
      $data['detail'] = $detail;
     
      $this->load->view('template/header');

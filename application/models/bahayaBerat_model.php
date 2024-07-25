@@ -1,5 +1,5 @@
 <?php
-class bahayaBerat_model extends CI_Model {
+class BahayaBerat_model extends CI_Model {
 
     public function get_data($table)
     {
@@ -18,6 +18,20 @@ class bahayaBerat_model extends CI_Model {
       $this->db->where('id',$bahayaberat['id']);
       $this->db->update('tbl_berat', $data);
  }
+ 
+   public function insert_data_notif($notif)
+     {
+       $data = array('message'=>$notif, 'message'=> 'Terdapat Informasi Kehamilan Berat Terbaru');
+         $this->db->insert('tbl_notif', $data);    
+         return ($this->db->affected_rows() > 0);
+     }
+     
+      public function edit_data_notif($notifedit)
+     {
+       $data = array('message'=>$notifedit, 'message'=> 'Terdapat Informasi Kehamilan Berat Terbaru');
+         $this->db->insert('tbl_notif', $data);    
+         return ($this->db->affected_rows() > 0);
+     }
 
  public function del_data(){
       

@@ -38,5 +38,9 @@ class M_api extends CI_Model {
     return $this->db->get('tbl_akun');
   }
 
+  public function tampil_profil() {
+    return $this->db->get('tbl_profil');
+  }
+
 }
 ?>
